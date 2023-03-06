@@ -10,7 +10,7 @@ const db = require("../models");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const withAuth = require("./withAuth");
-
+const serverless = require("serverless-http");
 
 
 app.use(session({
@@ -44,8 +44,11 @@ app.use("/register", register);
 app.get("/checkToken", withAuth.checkToken);
 
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server up and running on port ${process.env.PORT}`);
-});
+// app.listen(process.env.PORT, () => {
+//   console.log(`Server up and running on port ${process.env.PORT}`);
+// });
 
+app.use(`/.netlify/functions/api`, api);
 module.exports = app;
+module.exports.handler = serverless(app);
+
