@@ -13,15 +13,15 @@ const withAuth = require("./withAuth");
 const serverless = require("serverless-http");
 
 
-app.use(session({
-    secret: process.env.SECRET_KEY,
-    resave:false,
-    saveUninitialized:true,
-    cookie: {
-        secure: 'auto'
-        //https: true
-    }
-}))
+// app.use(session({
+//     secret: process.env.SECRET_KEY,
+//     resave:false,
+//     saveUninitialized:true,
+//     cookie: {
+//         secure: 'auto'
+//         //https: true
+//     }
+// }))
 
 // app.use(
 //   cors({
