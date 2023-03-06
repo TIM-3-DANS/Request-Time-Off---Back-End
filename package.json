@@ -11,8 +11,8 @@
     "db:migrate": "sequelize-cli db:migrate",
     "db:rollback": "sequelize-cli db:migrate:undo",
     "db:seed": "sequelize-cli db:seed:all",
-    "start": "nodemon .bin/netlify-lambda serve src/index.js",
-    "build": "nodemon .bin/netlify-lambda build src/index.js"
+    "start": "./node_modules/.bin/netlify-lambda serve src/index.js",
+    "build": "./node_modules/.bin/netlify-lambda build src/index.js"
   },
   "keywords": [],
   "author": "",
